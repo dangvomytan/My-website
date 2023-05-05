@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Quản lý sản phẩm</title>
+     <link rel="stylesheet" href="../assets/css/admin.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+     <main>
+          <nav id="left_nav">
+               <div class="nav_title">
+
+               </div>
+               <div class="nav_content">
+                    <ul>
+                         <li>
+                              <a href="./admin_user.html">
+                                   <div class="nav_item">
+                                        <div class="ni_icon">
+                                             <i class='bx bxs-contact'></i>
+                                        </div>
+                                        <div class="ni_text">
+                                             <span> Người dùng</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </li>
+                         <li>
+                              <a href="./admin_product.html">
+                                   <div class="nav_item">
+                                        <div class="ni_icon">
+                                             <i class='bx bxs-component'></i>
+                                        </div>
+                                        <div class="ni_text">
+                                             <span> Sản Phẩm</span>
+                                        </div>
+
+                                   </div>
+                              </a>
+                         </li>
+                         <li>
+                              <a href="">
+                                   <div class="nav_item">
+                                        <div class="ni_icon">
+                                             <i class='bx bx-detail'></i>
+                                        </div>
+                                        <div class="ni_text">
+                                             <span> Đơn hàng</span>
+                                        </div>
+                                   </div>
+                              </a>
+                         </li>
+                    </ul>
+               </div>
+          </nav>
+          <div id="main_right">
+               <div id="mr_container">
+                    <div id="mr-header">
+                         <h2>QUẢN LÝ SẢN PHẨM</h2>
+                    </div>
+                    <div id="btn_create_box">
+                         <button id="btn_createProduct" class="bg_btn_create"
+                              onclick=" handleClickCreateProduct()">Create</button>
+                    </div>
+                    <div id="mr-main">
+                         <div id="mr-updateform">
+                              <form id="formProductInput" action="">
+                                   <div class="mr-form">
+                                        <div class="mrf-table">
+                                             <table aria-busy="2px">
+                                                  <tr>
+                                                       <td rowspan="7">
+                                                            <div id="printImage">
+                                                                 <img src="../../assets/images/products/DJI_FPV-247x247.jpg"
+                                                                      alt="">
+                                                            </div>
+                                                       </td>
+                                                       <td>Mã sản phẩm</td>
+                                                       <td>
+                                                            <input type="text" name="idProduct" id="tbxIdInput">
+                                                            <p id="errorIdProduct"></p>
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td>Danh mục</td>
+                                                       <td>
+                                                            <input type="text" name="listProduct"
+                                                                 id="tbxListProductInput">
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td>Thương hiệu</td>
+                                                       <td>
+                                                            <input type="text" name="brandProduct"
+                                                                 id="tbxBrandProductInput">
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td>Tên sản phẩm</td>
+                                                       <td>
+                                                            <input type="text" name="nameProduct"
+                                                                 id="tbxNameProductInput">
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td>Giá tiền</td>
+                                                       <td>
+                                                            <input type="number" name="priceProduct" id="tbxPriceInput">
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td>Hình ảnh sản phẩm</td>
+                                                       <td>
+                                                            <input type="file" name="imageProduct" id="tbxImageInput"
+                                                                 onchange="getImage(this.value)">
+                                                            <p id="errorImageProduct"></p>
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td>Thông tin sản phẩm</td>
+                                                       <td><textarea name="detailProduct" id="tta_detailProduct"
+                                                                 cols="30" rows="10"
+                                                                 id="tbxDescriptionInput"></textarea></td>
+                                                  </tr>
+                                             </table>
+                                             <div class="mrf-button">
+                                                  <input type="submit" id="btnAddProduct" value="Thêm mới"
+                                                       onclick="handleAddProduct()">
+                                                  <input type="submit" id="btnUpdateProduct" value="Cập nhật"
+                                                       onclick="handleUpadteProduct()">
+                                                  <input type="button" id="btnCancel" value="Quay lại"
+                                                       onclick="handleClickCancelProduct()">
+                                             </div>
+                                        </div>
+
+                                   </div>
+                              </form>
+                         </div>
+
+                         <table id="mr-tableRender">
+                              <tr>
+                                   <th>#</th>
+                                   <th></th>
+                                   <th>Name product</th>
+                                   <th>Price</th>
+                                   <th>Action</th>
+                              </tr>
+
+                              <tbody id="tbd_product">
+                                   <tr>
+                                        <td>1</td>
+                                        <td><img src="../assets/images/products/DJI_FPV-247x247.jpg" alt=""></td>
+                                        <td>marvic 3 pro</td>
+                                        <td>16.000.000</td>
+                                        <td>
+                                             <button class="bg_btn_edit">Edit</button>
+                                             <button class="bg_btn_delete">Delete</button>
+                                        </td>
+                                   </tr>
+
+                                   <tr>
+                                        <td>1</td>
+                                        <td><img src="../assets/images/products/DJI_FPV-247x247.jpg" alt=""></td>
+                                        <td>marvic 3 pro</td>
+                                        <td>16.000.000</td>
+                                        <td>
+                                             <button class="bg_btn_edit">Edit</button>
+                                             <button class="bg_btn_delete">Delete</button>
+                                        </td>
+                                   </tr>
+
+                                   <tr>
+                                        <td>1</td>
+                                        <td><img src="../assets/images/products/DJI_FPV-247x247.jpg" alt=""></td>
+                                        <td>marvic 3 pro</td>
+                                        <td>16.000.000</td>
+                                        <td>
+                                             <button class="bg_btn_edit">Edit</button>
+                                             <button class="bg_btn_delete">Delete</button>
+                                        </td>
+                                   </tr>
+                              </tbody>
+
+                         </table>
+                    </div>
+               </div>
+          </div>
+
+
+          </div>
+     </main>
+     <script src="../assets/js/admin_product.js"></script>
+</body>
+
+</html>

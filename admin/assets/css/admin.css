@@ -1,0 +1,350 @@
+*
+{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+:root
+{
+     --greyColor: #535658;
+     --whileColor: #ffffff;
+     --greenColor: #71DD37;
+     --blueColor: #8688FF;
+     --blackColor: #000;
+     --redColor: #FF3E1D;
+     --color2: #2686D0;
+     --color3: #f2f2f2;
+     --color4: #f4f6f8;
+     --color5: #ccc;
+     --color6: #E7E7FF;
+     --color7: #6B51DF;
+     --color8: #343957;
+     --color9: #AEAEBB;
+
+}
+body
+{
+     max-width: 1320px;
+     font-size: 16px;
+     font-family: tahoma;
+     margin: auto;
+}
+main
+{
+
+     display: flex;
+}
+#left_nav
+{
+     width: 25%;
+     border: 1px solid green;
+     background-color: var(--color8);
+}
+.nav_content
+{
+/* border: 1px solid red; */
+}
+.nav_content ul
+{
+list-style: none;
+display: flex;
+flex-direction: column;
+}
+.nav_content ul li
+{
+     /* padding: 1rem 2rem; */
+     padding-bottom: 0.2rem;
+     padding-right: 2rem;
+}
+.nav_content a
+{
+     text-decoration: none;
+     color:var(--color9);
+}
+.nav_item
+{
+     display: flex;
+     align-items: center;
+
+     padding: 0.8rem;
+     border-top-right-radius: 2.5rem;
+     border-bottom-right-radius: 2.5rem;
+     justify-content: start;
+     padding-left: 2rem;
+}
+.nav_item:hover
+{
+
+     background-color: var(--color7);
+     border-left: 0.2rem solid red;
+     color: var(--whileColor);
+}
+.ni_icon
+{
+background-color: #71DD37;
+padding: 0.5rem;
+border-radius: 50%;
+}
+.ni_text
+{    
+padding-left: 0.5rem;
+}
+     .nav_item i
+     {
+          font-size: 2.2rem;
+     }
+
+.nav_item span
+{
+     font-size: 1.2rem;
+     align-items: center;
+}
+/* ======= */
+#main_right
+{
+     width: 75%;
+     border: 1px solid blue;
+     background-color: var(--greyColor);
+     padding-bottom: 2rem;
+}
+/* === */
+#mr_container
+{
+     width: 95%;
+     border-radius: 0.8rem;
+     margin: auto;
+     margin-top: 2.5%;
+     background-color: var(--color3);
+
+}
+#mr-header
+{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5rem;
+    padding-bottom: 0.5rem;
+}
+#mr-main
+{
+    /* border: 1px solid red; */
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
+#mr-tableRender
+{
+     width: 100%;
+     border: none;
+     border-collapse: collapse;
+
+}
+#mr-tableRender th, td
+{
+     text-align: start;
+     padding: 0.5rem 0;
+     padding-left: 0.8rem;
+}
+#mr-tableRender th:nth-child(2)
+{
+width: 30%;
+}
+#mr-tableRender th:nth-child(3)
+{
+width: 30%;
+}
+#mr-tableRender th:last-child
+{
+width: 20%;
+}
+#mr-tableRender tr:nth-child(even)
+{
+background-color: var(--color6);
+}
+#mr-tableRender button
+{
+     padding: 0.3rem 0.5rem;
+}
+#mr-tableRender img
+{
+     width: 30%;
+     height: 30%;
+}
+/* === button == */
+.bg_btn_create
+{
+     float: right;
+     background-color: var(--color6);
+     border: 0.1rem solid var(--greenColor);
+     color: var(--greenColor);
+     padding: 0.3rem 0.5rem;
+     margin-right: 1rem;
+     
+}
+.bg_btn_create:hover
+{
+     background-color: var(--greenColor);
+     border: 0.1rem solid var(--greenColor);
+     color: var(--whileColor);
+}
+.bg_btn_actinve
+{
+     background-color:var(--color6);
+     border: 0.1rem solid var(--greenColor);
+     color: var(--greenColor);
+}
+.bg_btn_actinve:hover
+{
+     background-color:var(--greenColor);
+     border: 0.1rem solid var(--greenColor);
+     color: var(--whileColor);
+}
+.bg_btn_inactive
+{
+     background-color: var(--color6);
+     border: 0.1rem solid var(--redColor);
+     color: var(--redColor);
+}
+.bg_btn_inactive:hover
+{
+     background-color: var(--redColor);
+     border: 0.1rem solid var(--redColor);
+     color: var(--whileColor);
+}
+.bg_btn_edit
+{
+     background-color: var(--color6);
+     border: 0.1rem solid var(--blueColor    );
+     color: var(--blueColo);
+
+}
+.bg_btn_edit a
+{
+     text-decoration: none;
+}
+.bg_btn_edit:hover
+{
+     background-color: var(--blueColor);
+     border: 0.1rem solid var(--blueColor);
+     color: var(--whileColor);
+}
+.bg_btn_delete
+{
+     background-color: var(--color6);
+     border: 0.1rem solid var(--redColor);
+     color: var(--redColor);
+}
+.bg_btn_delete:hover
+{
+     background-color: var(--redColor);
+     border: 0.1rem solid var(--redColor);
+     color: var(--whileColor);
+}
+/* ======================================= */
+#mr-updateform
+{
+     display: none;
+}
+.mrf-table table
+{
+     width: 100%;
+}
+.mr-form
+{
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+    
+}
+
+.mrf-table
+{
+    padding: 5px 15px;
+}
+.mrf-table table
+{
+    width: 100%;
+    font-size: 18px;
+}
+.mrf-table td 
+{
+padding: 5px;
+}
+.mrf-table td:first
+{
+    width: 30%;
+}
+
+.mrf-table td:nth-child(2)
+{
+    width: 25%;
+    text-align: left;
+}
+.mrf-table td:last-child
+{
+    width: 45%;
+}
+.mrf-table input
+{
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    padding: 0 5px;
+}
+.mrf-table p
+{
+    color: red;
+}
+.mrf-table textarea 
+{
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    padding: 0 5px;
+    resize: none;
+}
+.printImage
+{
+height:100%;
+width: 100%;
+}
+.mrf-table img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.mrf-button
+{
+    padding: 10px;
+text-align: center;
+}
+.mrf-button input[type="button"]
+{
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    background-color: var(--color6);
+    border: 0.1rem solid var(--redColor);
+    color: var(--redColor);
+}
+.mrf-button input[type="button"]:hover
+{
+    background-color: var(--redColor);
+    border: 0.1rem solid var(--redColor);
+    color: var(--whileColor);
+}
+.mrf-button input[type="submit"]
+{
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    background-color: var(--color6);
+    border: 0.1rem solid var(--greenColor);
+    color: var(--greenColor);
+}
+.mrf-button input[type="submit"]:hover
+{
+
+    background-color: var(--greenColor);
+    border: 0.1rem solid var(--greenColor);
+    color: var(--whileColor);
+}

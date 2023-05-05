@@ -1,0 +1,81 @@
+@import url(../css/style.css);
+
+main
+{
+     max-width: var(--max_width);
+     border: 2px solid red;
+}
+.cart_products_card
+{
+     padding: 0.5rem;
+}
+#tbl_cart
+{
+
+     table-layout: fixed;
+     width: 100%;
+     align-items: center;
+}
+#tbl_cart th
+{
+     text-align: center;
+     /* border: 1px solid green; */
+     
+}
+#tbl_cart td
+{
+     text-align: center;
+     /* border: 1px solid blue; */
+     
+}
+#tbl_cart td:first-child
+{
+     width: 5%;
+
+
+
+}
+#tbl_cart td:nth-child(2)
+{
+     width: 10%;
+
+}
+#tbl_cart td:nth-child(3)
+{
+     width: 25%;
+
+}
+#tbl_cart td:nth-child(4)
+{
+     width: 10%;
+
+}
+#tbl_cart td:nth-child(5)
+{
+     width: 10%;
+
+}
+#tbl_cart td:nth-child(6)
+{
+     width: 10%;
+
+}
+#tbl_cart td:last-child
+{
+     width: 10%;
+
+}
+.tbl_cart_box
+{
+     display: flex;
+     padding: 0.5rem;
+}
+.tbl_cart_box input[type="text"]
+{
+     width: 3rem;
+     text-align: center;
+}
+.tbl_cart_box input[type="button"]
+{
+     width: 2rem;
+}
