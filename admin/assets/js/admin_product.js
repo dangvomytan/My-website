@@ -13,7 +13,7 @@ function localStorageSetItem(key, data) {
 // Hàm fomat link hình ảnh
 function fomatSrcImage(src) {
   const array = src.split("\\");
-  const string = "../../assets/images/products/" + array[2];
+  const string = "../../images/products/" + array[2];
   return string;
 }
 function getImage(src)
