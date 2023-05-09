@@ -5,8 +5,8 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Quản lý sản phẩm</title>
-     <link rel="stylesheet" href="./assets/css/admin.css">
+     <title>Quản lý dơn hàng</title>
+     <link rel="stylesheet" href="../css/admin.css">
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -19,7 +19,7 @@
             <div class="nav_content">
                <ul>
                     <li>
-                         <a href="./pages/admin_user.html">
+                         <a href="./admin_user.html">
                          <div class="nav_item">
                               <div class="ni_icon">
                                    <i class='bx bxs-contact'></i>
@@ -44,7 +44,7 @@
                     </a>
                     </li>
                     <li>
-                         <a href="">
+                         <a href="./admin_order.html">
                          <div class="nav_item">
                               <div class="ni_icon">
                                    <i class='bx bx-detail'></i>
@@ -59,13 +59,37 @@
             </div>
           </nav>
           <div id="main_right">
-              
+               <div id="mr_container">
+                    <div id="mr-header">
+                         <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+                    </div>
+                    <div id="mr-main">
+                         <table id="mr-tableRender" >
+                              <tr>
+                                   <th>#</th>
+                                   <th>Name</th>
+                                   <th>Email</th>
+                                   <th>Status</th>
+                              </tr>
+                              <tbody id="tbd_users">
+                                   <tr>
+                                        <td>3</td>
+                                        <td>dang vo my tan</td>
+                                        <td>dangvomytan@gmail.com</td>
+                                        <td>
+                                             <button class="bg_btn_inactive">Inactive</button>
+                                        </td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+               </div>
           </div>
 
 
           </div>
      </main>
-     <script src="/admin/js/admin_user.js"></script>
+     <script src=""></script>
 </body>
 
 </html>

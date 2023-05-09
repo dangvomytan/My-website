@@ -61,7 +61,7 @@ function handleCartLength() {
     (user) => user.userEmail === userLogin.userEmail
   );
 
-  // console.log(userInfo.userCart  .length, 222);
+  console.log(userInfo.userCart  .length, 222);
   eCartLength.innerHTML = `(${userInfo.userCart.length})`;
 }
 

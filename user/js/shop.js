@@ -35,7 +35,7 @@ function handleRenderProduct()
 // Thực hiện click
 function handleClickView(id)
 {
-  window.location = `../pages/detail_product.html?productId=${id}`
+  window.location = `../pages/detail_product.html?productid=${id}`
 }
 // =MAIN================================
 handleRenderProduct();

@@ -172,6 +172,7 @@ formLogin.addEventListener("submit",(element)=>{
 function handleLogin()
 {
   const listUser = localStorageGetItem("users");
+  const userAdmin = localStorageGetItem("userAdmin");
   let isDulicate = false;
   let userLogin;
 
@@ -196,7 +197,7 @@ function handleLogin()
           userLogin = infoUser;
           delete userLogin.userPassword;
         }
-        else
+        else 
         {
           alert("Tài khoản của bạn đã bị khóa")
           errorLogin.innerHTML = "";

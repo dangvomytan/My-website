@@ -1,6 +1,6 @@
 const url = new URL(document.URL);
-const viewId = url.searchParams.get("productId");
-
+const viewId = url.searchParams.get("productid");
+console.log(viewId,222);
 function localStorageGetItem(key) {
   const data = JSON.parse(localStorage.getItem(`${key}`)) ?? [];
   return data;
@@ -21,7 +21,7 @@ function handleRenderDetailProduct(id) {
   const boxDetail = document.querySelector(".box_detail");
   let content = "";
   listProduct.forEach((product) => {
-    if (id === product.productId) {
+    if (id == product.productId) {
       content += `
          <div>
          <div class="row">
