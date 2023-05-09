@@ -7,43 +7,48 @@ function localStorageGetItem(key) {
   }
   function handleUpdateUser()
   {
-     console.log(1);
      const listUser=  localStorageGetItem("users");
+     const  message = document.querySelector(".message");
+     const  message_Content = document.querySelector("#message_Content");
 
-     const userName = document.querySelector("#tbx_userName");
      const userEmail = document.querySelector("#tbx_userEmail");
+     const userName = document.querySelector("#tbx_userName");
      const userPassword =  document.querySelector("#tbx_userPassword");
      const userRePassword =  document.querySelector("#tbx_userRePassword");
      let userInfo={};
-     // let idUser,statuSuser;
+     let idUser,statuSuser,isTrue=false;
      listUser.forEach(user => {
-     if(userLogin.userEmail ===user.userEmail)
+     if(userLogin.userEmail === user.userEmail)
      {
+          isTrue=true;
           idUser = user.userId;
           statuSuser = user.userStatus;
      }
      });
-     // debugger;
-     userInfo={
-          // userId: idUser,
-          // userStatus: statuSuser,
-          userName: userName.value,
-          userEmail: userEmail.value,
-          userPassword: userPassword.value,
-          userRePassword: userRePassword.value,
-     }
-     console.log(11,userLogin);
-     console.log(22,userLogin);
-     listUser.forEach((user,index)=>{
-          if(user.userId===userInfo.userId)
-          {
-               listUser.splice(index,1,userInfo);
-               localStorageSetItem("users",listUser);
-
-               localStorageSetItem("userLogin",userLogin);
-               // window.location="../index.html";
+     if(isTrue)
+     {
+          userInfo={
+               userId: idUser,
+               userStatus: statuSuser,
+               userName: userName.value,
+               userEmail: userEmail.value,
+               userPassword: userPassword.value,
+               userRePassword: userRePassword.value,
+               userCart:[],
+               userPhone: "",
+               userAddress: "",
           }
-     })
+          listUser.forEach((user,index)=>{
+               if(user.userId===userInfo.userId)
+               {
+                    listUser.splice(index,1,userInfo);
+                    localStorageSetItem("users",listUser);
+                    // window.location="../../index.html";
+                    message.style.display="inline"
+                    message_Content.innerHTML="cập nhật thành công";
+               }
+          })
+     }
 }
 function handleEditUser(userLogin)
 {

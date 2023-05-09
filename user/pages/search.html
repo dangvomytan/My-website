@@ -16,7 +16,36 @@
 
 </head>
 <body>
-<header></header>
+   <header class="header">
+      <section class="flex">
+         <a href="../../index.html" class="logo">TanDang<span>Store</span></a>
+
+         <nav class="navbar">
+            <a href="../../index.html">home</a>
+            <a href="">about</a>
+            <a href="">sevice</a>
+            <a href="../pages/shop.html">shop</a>
+            <a href="">contact</a>
+         </nav>
+
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="../pages/search.html"><i class="fas fa-search"></i></a>
+            <a href="../pages/cart.html"><i class="fas fa-shopping-cart"></i><span id="cart_length">(0)</span></a>
+            <div id="user-btn" class="fas fa-user"></div>
+         </div>
+
+         <div class="profile" id="box_profile">
+
+            <p></p>
+            <div class="flex-btn">
+               <a href="../pages/" class="option-btn">Login</a>
+            </div>
+
+         </div>
+
+      </section>
+   </header>
 
 <section class="search-form">
    <div class="sf_box">
@@ -27,7 +56,7 @@
 
 <section class="products" >
 
-   <div class="box-container" id="product_card">
+   <div class="box-container" id="product_card" >
       <!-- product -->
       <!-- <div class="box" >
          <img src="../../images/products/DJI-Mavic-3-Classic-7-247x247.jpg" alt="">
@@ -39,19 +68,51 @@
       </div> -->
       <!-- end -->
 
-      
    </div>
 
 </section>
 
+<footer class="footer">
 
+   <section class="grid">
 
+      <div class="box">
+         <h3>quick links</h3>
+         <a href=""> <i class="fas fa-angle-right"></i> home</a>
+         <a href=""> <i class="fas fa-angle-right"></i> about</a>
+         <a href="../../user/pages/shop.html"> <i class="fas fa-angle-right"></i> shop</a>
+         <a href=""> <i class="fas fa-angle-right"></i> contact</a>
+      </div>
 
+      <div class="box">
+         <h3>extra links</h3>
+         <a href="../../user/pages/Signup_Login.html"> <i class="fas fa-angle-right"></i> register/login</a>
+         <a href="../../user/pages/cart.html"> <i class="fas fa-angle-right"></i> cart</a>
+         <a href=""> <i class="fas fa-angle-right"></i> orders</a>
+      </div>
 
+      <div class="box">
+         <h3>contact us</h3>
+         <a href=""><i class="fas fa-phone"></i> +08437 671 7801</a>
+         <a href=""><i class="fas fa-phone"></i> +8435 771 1093</a>
+         <a href=""><i class="fas fa-envelope"></i> tandang@gmail.com</a>
+         <a href=""><i class="fas fa-map-marker-alt"></i> </a>
+      </div>
 
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+         <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+         <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+         <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+      </div>
 
+   </section>
+
+</footer>
 
 <script src="../js/search.js"></script>
+<script src="../js/home.js"></script>
 
 </body>
 </html>

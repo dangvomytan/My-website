@@ -1,5 +1,5 @@
 
-.form-container form{
+.form_update{
    background-color: var(--white);
    padding:2rem;
    border-radius: .5rem;
@@ -10,19 +10,19 @@
    max-width: 50rem;
 }
 
-.form-container form h3{
+.form-container .form_update h3{
    font-size: 2.5rem;
    text-transform: uppercase;
    color:var(--black);
 }
 
-.form-container form p{
+.form-container .form_update p{
    font-size: 2rem;
    color:var(--light-color);
    margin:1.5rem 0;
 }
 
-.form-container form .box{
+.form-container .form_update .box{
    margin:1rem 0;
    background-color: var(--light-bg);
    padding:1.4rem;

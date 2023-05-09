@@ -17,42 +17,53 @@
 
 </head>
 <body>
+   <header class="header">
+      <section class="flex">
+         <a href="../../index.html" class="logo">TanDang<span>Store</span></a>
 
+         <nav class="navbar">
+            <a href="../../index.html">home</a>
+            <a href="">about</a>
+            <a href="">sevice</a>
+            <a href="../pages/shop.html">shop</a>
+            <a href="">contact</a>
+         </nav>
+
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="../pages/search.html"><i class="fas fa-search"></i></a>
+            <a href="../pages/cart.html"><i class="fas fa-shopping-cart"></i><span id="cart_length">(0)</span></a>
+            <div id="user-btn" class="fas fa-user"></div>
+         </div>
+
+         <div class="profile" id="box_profile">
+
+            <p></p>
+            <div class="flex-btn">
+               <a href="./user/pages/Signup_Login.html" class="option-btn">Login</a>
+            </div>
+
+         </div>
+
+      </section>
+   </header>
 
 <section class="shopping-cart">
 
    <h3 class="heading">GIỎ HÀNG</h3>
 
-   <div class="box-container">
+   <div class="box-container" id="box_cart">
 
-   <div action="" method="post" class="box">
+   <div action="" class="box">
       <img src="" alt="">
       <div class="name">pro adasd 2</div>
       <div class="flex">
-      
          <div class="price"><span>114.000.000 VND</span></div>
-      </div>
-      <div class="flex">
          <input type="number" name="qty" class="qty" min="1" max="99"">
-         <button type="submit" class="fas fa-edit" name="update_qty"></button>
+         <!-- <button type="submit" class="fas fa-edit" name="update_qty"></button> -->
       </div>
       <div class="sub-total">Tổng : <span></span> </div>
-      <input type="submit" value="Xóa" class="delete-btn" name="delete">
-   </div>
-
-   <div action="" method="post" class="box">
-      <img src="" alt="">
-      <div class="name">pro adasd 2</div>
-      <div class="flex">
-      
-         <div class="price"><span>114.000.000 VND</span></div>
-      </div>
-      <div class="flex">
-         <input type="number" name="qty" class="qty" min="1" max="99"">
-         <button type="submit" class="fas fa-edit" name="update_qty"></button>
-      </div>
-      <div class="sub-total">Tổng : <span></span> </div>
-      <input type="submit" value="Xóa" class="delete-btn" name="delete">
+      <input type="submit" value="Xóa" class="delete-btn" name="delete" onclick="handleClickDeleteCart(id)">
    </div>
 
 
@@ -60,28 +71,64 @@
    </div>
 
    <div class="cart-total">
-      <p>Tổng cộng : <span>0000</span></p>
-      <a href="" class="option-btn">Đến cửa hàng</a>
-      <a href="" class="delete-btn">Xóa tất cả</a>
+      <p id="ct_total">Tổng cộng : <span>0</span></p>
+      <button class="btn" onclick="handleClickOrder()">Đặt hàng</button>
+      <button class="option-btn" onclick="handleClickToShop()">Đến cửa hàng</button>
+      <button class="delete-btn" onclick="handleClickDeleteAllCart()"">Xóa tất cả</button>
       <!-- <a href="" class="btn">proceed to checkout</a> -->
    </div>
 
 </section>
+<section class="shopping-cart">
+
+   <h3 class="heading">LỊCH SỬ MUA HÀNG</h3>
 
 
+   </div>
+
+</section>
+<footer class="footer">
+
+   <section class="grid">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href=""> <i class="fas fa-angle-right"></i> home</a>
+         <a href=""> <i class="fas fa-angle-right"></i> about</a>
+         <a href="../../user/pages/shop.html"> <i class="fas fa-angle-right"></i> shop</a>
+         <a href=""> <i class="fas fa-angle-right"></i> contact</a>
+      </div>
+
+      <div class="box">
+         <h3>extra links</h3>
+         <a href="../../user/pages/Signup_Login.html"> <i class="fas fa-angle-right"></i> register/login</a>
+         <a href="../../user/pages/cart.html"> <i class="fas fa-angle-right"></i> cart</a>
+         <a href=""> <i class="fas fa-angle-right"></i> orders</a>
+      </div>
+
+      <div class="box">
+         <h3>contact us</h3>
+         <a href=""><i class="fas fa-phone"></i> +08437 671 7801</a>
+         <a href=""><i class="fas fa-phone"></i> +8435 771 1093</a>
+         <a href=""><i class="fas fa-envelope"></i> tandang@gmail.com</a>
+         <a href=""><i class="fas fa-map-marker-alt"></i> </a>
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+         <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+         <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+         <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+      </div>
+
+   </section>
+
+</footer>
 
 
-
-
-
-
-
-
-
-
-
-<?php include 'components/footer.php'; ?>
-
+<script src="../js/cart.js"></script>
+<script src="../js/home.js"></script>
 
 </body>
 </html>

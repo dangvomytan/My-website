@@ -4,11 +4,12 @@
    --main-color:#2980b9;
    --orange:#f39c12;
    --red:#e74c3c;
-   --black:#333;
+   --black:#6e6d6d;
+   --borderColor:#ccc;
    --white:#fff;
    --light-color:#666;
    --light-bg:#eee;
-   --border:.2rem solid var(--black);
+   --border:.2rem solid var(--borderColor);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
    --max-width:1320px;
 }
@@ -112,6 +113,7 @@ section{
    justify-content: space-between;
    gap:1.5rem;
    z-index: 1100;
+   /* display: none; */
 }
 
 .message span{

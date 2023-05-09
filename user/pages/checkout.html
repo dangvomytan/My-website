@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>shop</title>
-
+   <title>checkout</title>
+   
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
+   <link rel="stylesheet" href="../css/checkout.css">
    <link rel="stylesheet" href="../css/home.css">
-   <link rel="stylesheet" href="../css/shop.css">
-
 </head>
-
 <body>
-   <!-- <div class="message">
-      <span>thông báo</span>
-      <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-   </div> -->
    <header class="header">
       <section class="flex">
          <a href="../../index.html" class="logo">TanDang<span>Store</span></a>
@@ -44,33 +37,82 @@
 
             <p></p>
             <div class="flex-btn">
-               <a href="../pages/signup_login.html" class="option-btn">Login</a>
+               <a href="./user/pages/Signup_Login.html" class="option-btn">Login</a>
             </div>
 
          </div>
 
       </section>
-   </header>
-<main>
-   <section class="products">
-      <h1 class="heading">products</h1>
+   </header> 
 
-      <div class="box-container" id="product_card">
-         <!-- product -->
-         <div class="box" >
-            <img src="../../images/products/DJI-Mavic-3-Classic-7-247x247.jpg" alt="">
-            <div class="name">NAME PRODUCT</div>
-            <div class="flex">
-               <div class="price"><span>TIEN</span></div>
-            </div>
-            <button class="btn" onclick="handleClickView(1)">Xem chi tiết</button>
-         </div>
-         <!-- end -->
+<section class="checkout-orders">
 
-         
+   <div class="form" >
+
+   <h3>ĐƠN HÀNG</h3>
+
+      <div class="display-orders" >
+         <table >
+            <tr>
+               <th>STT</th>
+               <th>Tên sản phẩm</th>
+               <th>Số lượng</th>
+               <th>Giá tiền</th>
+            </tr>
+            <tbody id="tbd_order">
+               <tr>
+                  <td>1</td>
+                  <td>Mavis Pro 3</td>
+                  <td>2</td>
+                  <td>3000000</td>
+               </tr>
+            </tbody>
+
+         </table>
+         <!-- <p>Stt ten san pham:  so luong: <span>gia tien</span> </p> -->
+         <div class="grand-total" id="fr_total">Tổng cộng <span></span></div>
       </div>
-   </section>
-</main>
+
+      <h3>THÔNG TIN ĐẶT HÀNG</h3>
+
+      <div class="flex">
+         <div class="inputBox">
+            <span>Tên:</span>
+            <input type="text" name="name" class="box" id="tbx_orderName">
+         </div>
+         <div class="inputBox">
+            <span>SĐT :</span>
+            <input type="number" name="number" class="box"  id="tbx_orderPhone">
+         </div>
+         <div class="inputBox">
+            <span>Email :</span>
+            <input type="email" name="email" class="box" id="tbx_orderEmail">
+         </div>
+         <div class="inputBox">
+            <span>Phương thức thanh toán :</span>
+            <select name="method" class="box" id="slt_orderMethod">
+               <option value="Thanh toán khi giao hàng">Thanh toán khi giao hàng</option>
+               <option value="cThẻ tín dụng">Thẻ tín dụng</option>
+               <option value="Ví điệ tử">Ví điệ tử</option>
+            </select>
+         </div>
+         <div class="inputBox" >
+            <span>Địa chỉ :</span>
+            <input type="text" name="flat" placeholder="" class="box" id="tbx_orderAddress">
+         </div>
+         <div class="inputBox">
+            <span>Tình trạng đơn hàng:</span>
+            <input type="text" name="flat" placeholder="ĐANG XỬ LÝ" class="box" disabled value="" id="tbx_orderStatus>
+         </div>
+         <input type="button" name="order" value=""> 
+
+      </div>
+
+      <button class="btn" onclick="handlePayment()">THANH TOÁN</button>
+
+   </div>
+
+</section>
 
 <footer class="footer">
 
@@ -110,9 +152,13 @@
    </section>
 
 </footer>
-   <script src="../js/shop.js"></script>
-   <script src="../js/home.js"></script>
+
+
+
+
+
+<script src="../js/checkout.js"></script>
+<script src="../js/home.js"></script>
 
 </body>
-
 </html>

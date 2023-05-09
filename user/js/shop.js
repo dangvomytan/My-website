@@ -5,7 +5,12 @@ function localStorageGetItem(key) {
 function localStorageSetItem(key, data) {
   localStorage.setItem(`${key}`, JSON.stringify(data));
 }
+function fomatPrice(str)
+{
+  let strPrint =  parseInt(str).toLocaleString("de-DE") + " VNĐ";
+  return strPrint;
 
+}
 function handleRenderProduct()
 {
      const listProduct = localStorageGetItem("products");
@@ -17,7 +22,7 @@ function handleRenderProduct()
           <img src="${product.productImage}" alt="">
           <div class="name">${product.productName}</div>
           <div class="flex">
-             <div class="price"><span>${product.productPrice} VND</span></div>
+             <div class="price"><span>${fomatPrice(product.productPrice)} </span></div>
           </div>
           <button class="btn" onclick="handleClickView(${product.productId})">Xem chi tiết</button>
        </div>
@@ -28,7 +33,6 @@ function handleRenderProduct()
 function handleClickView(id)
 {
   window.location = `../pages/detail_product.html?productId=${id}`
-
 }
 
 

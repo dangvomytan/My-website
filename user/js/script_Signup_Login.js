@@ -119,6 +119,9 @@ formSignup.addEventListener("submit", (element) => {
     userPassword: userPassword.value.trim(),
     userRePassword: userRePassword.value.trim(),
     userStatus: true,
+    userCart:[],
+    userPhone: "",
+    userAddress: "",
   };
 
   const isCheck = checkError(newUser,listUser);
@@ -198,7 +201,7 @@ function handleLogin()
   if(isDulicate)
   {
       localStorageSetItem("userLogin", userLogin);
-      window.location=("/index.html")
+      window.location=("../../index.html")
   }
   else
   {

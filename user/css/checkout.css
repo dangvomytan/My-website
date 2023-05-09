@@ -1,0 +1,115 @@
+.display-orders {
+   text-align: center;
+   padding-bottom: 0;
+}
+
+.display-orders table {
+   /* width: 70%; */
+   flex: 1 1 100rem;
+   padding: 1rem 2rem;
+
+   font-size: 2rem;
+   border: var(--border);
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   text-align: left;
+   margin: auto;
+}
+.display-orders tr {
+padding: 2rem;
+}
+.display-orders th {
+   background-color: var(--white);
+   color: var(--black);
+
+}
+.display-orders th:first-child {
+   text-align: center;
+}
+.display-orders th:nth-child(3) {
+   text-align: center;
+}
+.display-orders td:first-child {
+   width: 10%;
+   text-align: center;
+}
+
+.display-orders td:nth-child(2) {
+   width: 50%;
+   text-align: left;
+}
+
+.display-orders td:nth-child(3) {
+   width: 20%;
+   text-align: center;
+}
+
+.display-orders td:last-child {
+   width: 20%;
+   text-align: right;
+
+}
+
+.display-orders td {
+   background-color: var(--white);
+   color: var(--black);
+}
+
+
+.display-orders .grand-total {
+   margin-top: 1.5rem;
+   margin-bottom: 2.5rem;
+   font-size: 2.5rem;
+   color: var(--light-color);
+}
+
+.display-orders .grand-total span {
+   color: var(--red);
+}
+
+.checkout-orders .form {
+   padding: 2rem;
+   border: var(--border);
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+}
+
+.checkout-orders .form h3 {
+   border-radius: .5rem;
+   background-color: var(--black);
+   color: var(--white);
+   padding: 1.5rem 1rem;
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 2rem;
+   font-size: 2.5rem;
+}
+
+.checkout-orders .form .flex {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   justify-content: space-between;
+}
+
+.checkout-orders .form .flex .inputBox {
+   width: 49%;
+}
+
+.checkout-orders .form .flex .inputBox .box {
+   width: 100%;
+   border: var(--border);
+   border-radius: .5rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   padding: 1.2rem 1.4rem;
+   margin: 1rem 0;
+   background-color: var(--light-bg);
+}
+
+.checkout-orders .form .flex .inputBox span {
+   font-size: 1.8rem;
+   color: var(--light-color);
+}

@@ -1,26 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>shop</title>
-
+   <title>orders</title>
+   
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
+   <link rel="stylesheet" href="../css/orders.css">
    <link rel="stylesheet" href="../css/home.css">
-   <link rel="stylesheet" href="../css/shop.css">
 
 </head>
-
 <body>
-   <!-- <div class="message">
-      <span>thông báo</span>
-      <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-   </div> -->
+   
    <header class="header">
       <section class="flex">
          <a href="../../index.html" class="logo">TanDang<span>Store</span></a>
@@ -44,33 +40,33 @@
 
             <p></p>
             <div class="flex-btn">
-               <a href="../pages/signup_login.html" class="option-btn">Login</a>
+               <a href="./user/pages/Signup_Login.html" class="option-btn">Login</a>
             </div>
 
          </div>
 
       </section>
    </header>
-<main>
-   <section class="products">
-      <h1 class="heading">products</h1>
 
-      <div class="box-container" id="product_card">
-         <!-- product -->
-         <div class="box" >
-            <img src="../../images/products/DJI-Mavic-3-Classic-7-247x247.jpg" alt="">
-            <div class="name">NAME PRODUCT</div>
-            <div class="flex">
-               <div class="price"><span>TIEN</span></div>
-            </div>
-            <button class="btn" onclick="handleClickView(1)">Xem chi tiết</button>
-         </div>
-         <!-- end -->
+<section class="orders">
 
-         
-      </div>
-   </section>
-</main>
+   <h1 class="heading">placed orders</h1>
+
+   <div class="box-container">
+
+   <div class="box">
+      <p>Tên : <span>tan</span></p>
+      <p>Email : <span></span></p>
+      <p>SĐT : <span></span></p>
+      <p>Địa chỉ : <span></span></p>
+      <p>Phương thức thanh toán : <span></span></p>
+      <p>Đơn hàng : <span></span></p>
+      <p>Tổng giá : <span></span></p>
+      <p> Tình trạng : <span></span> </p>
+   </div>
+   </div>
+
+</section>
 
 <footer class="footer">
 
@@ -110,9 +106,6 @@
    </section>
 
 </footer>
-   <script src="../js/shop.js"></script>
-   <script src="../js/home.js"></script>
-
+<script src="../js/home.js"></script>
 </body>
-
 </html>
