@@ -21,7 +21,6 @@ function handleRenderCart() {
   const eRender = document.querySelector("#box_cart");
   let content = "";
 
-
   userInfo.userCart.forEach((item) => {
     listProduct.forEach((product) => {
       if (item.productId == product.productId) {
@@ -74,111 +73,110 @@ function handleUpdateQuantity(id, qty) {
     }
   });
   handleRenderCart();
-  handleRenderTotal()
+  handleRenderTotal();
 }
 
 function handleClickDeleteCart(id) {
-   const listUser = localStorageGetItem("users");
+  const listUser = localStorageGetItem("users");
   const userLogin = localStorageGetItem("userLogin");
   const userInfo = listUser.find(
-  (user) => user.userEmail === userLogin.userEmail
+    (user) => user.userEmail === userLogin.userEmail
   );
-  userInfo.userCart.forEach((user,index) => {
-   if (id == user.productId) {
-     userInfo.userCart.splice(index,1)
-     localStorageSetItem("users", listUser);
-   }  
-})
-handleRenderCart();
-handleRenderTotal()
+  userInfo.userCart.forEach((user, index) => {
+    if (id == user.productId) {
+      userInfo.userCart.splice(index, 1);
+      localStorageSetItem("users", listUser);
+    }
+  });
+  handleRenderCart();
+  handleRenderTotal();
 }
-function handleRenderTotal()
-{
-   const listUser = localStorageGetItem("users");
-   const userLogin = localStorageGetItem("userLogin");
-   const listProduct = localStorageGetItem("products");
-   const userInfo = listUser.find(
-     (user) => user.userEmail === userLogin.userEmail
-   );
- 
-   const eRender = document.querySelector("#ct_total");
-   let totai = 0;
-   userInfo.userCart.forEach((item) => {
-     listProduct.forEach((product) => {
+function handleRenderTotal() {
+  const listUser = localStorageGetItem("users");
+  const userLogin = localStorageGetItem("userLogin");
+  const listProduct = localStorageGetItem("products");
+  const userInfo = listUser.find(
+    (user) => user.userEmail === userLogin.userEmail
+  );
+
+  const eRender = document.querySelector("#ct_total");
+  let totai = 0;
+  userInfo.userCart.forEach((item) => {
+    listProduct.forEach((product) => {
       if (item.productId == product.productId) {
-      totai = totai + (Number(product.productPrice) * Number(item.quantily));
+        totai = totai + Number(product.productPrice) * Number(item.quantily);
       }
-   });
-   eRender.innerHTML =`Tổng cộng : <span>${fomatPrice(totai)}</span>`;
-});
+    });
+    eRender.innerHTML = `Tổng cộng : <span>${fomatPrice(totai)}</span>`;
+  });
 }
 
 function handleClickViewDetail(id) {
   window.location = `../pages/detail_product.html?productId=${id}`;
 }
-function handleClickToShop()
-{
-   window.location = `../pages/shop.html`
+function handleClickToShop() {
+  window.location = `../pages/shop.html`;
 }
 
-function handleClickDeleteAllCart()
-{
+function handleClickDeleteAllCart() {
   const eRender = document.querySelector("#ct_total");
   const listUser = localStorageGetItem("users");
   const userLogin = localStorageGetItem("userLogin");
   const userInfo = listUser.find(
-  (user) => user.userEmail === userLogin.userEmail
+    (user) => user.userEmail === userLogin.userEmail
   );
-  userInfo.userCart.splice(0,userInfo.userCart.length);
- localStorageSetItem("users",listUser);
- eRender.innerHTML =`Tổng cộng : <span>0</span>`;
-handleRenderCart();
+  userInfo.userCart.splice(0, userInfo.userCart.length);
+  localStorageSetItem("users", listUser);
+  eRender.innerHTML = `Tổng cộng : <span>0</span>`;
+  handleRenderCart();
 }
-function handleClickOrder()
-{
-
+function handleClickCheckout() {
   // const eRender = document.querySelector("#ct_total");
   const listUser = localStorageGetItem("users");
   const userLogin = localStorageGetItem("userLogin");
   const listOrder = localStorageGetItem("orders");
-  let today = new Date;
+  let today = new Date();
   let orderIdAuto = 1;
-
   //Lấy id order tự động
-  if(listOrder.length != 0)
-  {
-    orderIdAuto  = listOrder[listOrder.length-1].orderId+1;;
+  if (listOrder.length != 0) {
+    orderIdAuto = listOrder[listOrder.length - 1].orderId + 1;
   }
-
-  let order={
+  let order = {
     orderId: "",
     userId: "",
     date: "",
     cartDetail: [],
     status: false,
-  }
+  };
 
-  const userInfo = listUser.find((user) => user.userEmail === userLogin.userEmail);
+  const userInfo = listUser.find(
+    (user) => user.userEmail === userLogin.userEmail
+  );
   //Gán giá trị vào đơn hàng
-  console.log(userInfo,2222);
   order.orderId = orderIdAuto;
   order.cartDetail = userInfo.userCart;
-  order.date = today.getDate()+'/'+(today.getMonth()+1) +'/'+ today.getFullYear();
+  order.date =
+    today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
   order.userId = userInfo.userId;
-  console.log(order,33333);
-  //Push vào listOrder
-  // listOrder.push(order);
- localStorageSetItem("checkout",order);
-   window.location = `../pages/checkout.html`
+  localStorageSetItem("checkout", order);
+// Xóa giỏ hàng trong giỏ hàng người dung
+userInfo.userCart= []
+listUser.forEach((user, index) => {
+  if ((user.userId == userInfo.userId)) {
+    listUser.splice(index, 1, userInfo);
+  }
+});
+localStorageSetItem("users", listUser);
+  window.location = `../pages/checkout.html`;
 }
 
-function handleRenderHistoryOrder(idUser)
-{ 
+function handleRenderHistoryOrder(idUser) {
   const listOrder = localStorageGetItem("orders");
-  hitory = listOrder.filter(item => item.userId == 1)
-  console.log(hitory,2222);
-} 
+  hitory = listOrder.filter((item) => item.userId == 1);
+  console.log(hitory, 2222);
+}
 // -------main---------
 handleRenderCart();
-handleRenderTotal()
-handleRenderHistoryOrder()
+handleRenderTotal();
+
+

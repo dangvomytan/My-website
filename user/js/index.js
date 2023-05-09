@@ -38,11 +38,11 @@ function handleRenderUserLogin(info) {
       conten += `            
          <p>${user.userName}</p>
          <div class="flex-btn">
-         <a href="../pages/update_user.html" class="option-btn">Edit</a>
-         <a href="../pages/order.html" class="btn">Order</a>
+         <a href="./user/pages/update_user.html" class="option-btn">Edit</a>
+         <a href="./user/pages/orders.html" class="btn">Order</a>
          </div>
 
-         <a href="../pages/signup_login.html" class="delete-btn" onclick="handleLogout()">logout</a>`;
+         <a href="./user/pages/signup_login.html" class="delete-btn" onclick="handleLogout()">logout</a>`;
     }
   });
   eProfile.innerHTML = conten;
@@ -61,9 +61,37 @@ function handleCartLength() {
     (user) => user.userEmail === userLogin.userEmail
   );
 
-  console.log(userInfo.userCart.length, 222);
+  // console.log(userInfo.userCart  .length, 222);
   eCartLength.innerHTML = `(${userInfo.userCart.length})`;
 }
+
+function handleClickViewHome(id) {
+  window.location = `./user/pages/detail_product.html?productId=${id}`;
+}
+
+function handleRenderProductHome() {
+  const listProduct = localStorageGetItem("products");
+  const element = document.querySelector("#show_card");
+  let content = "";
+  listProduct.forEach((product) => {
+    content += `
+          <div class="swiper-slide slide">
+          <img src="${product.productImage}" alt="">
+          <div class="name">${product.productName}</div>
+          <div class="flex">
+             <div class="price"><span>${fomatPrice(
+               product.productPrice
+             )}</span></div>
+          </div>
+          <button class="btn" onclick="handleClickViewHome(${
+            product.productId
+          })">Xem chi tiết</button>
+       </div>
+          `;
+  });
+  element.innerHTML = content;
+}
+
 // ====== Main =====
 // Check Login
 const userLogin = JSON.parse(localStorage.getItem("userLogin"));

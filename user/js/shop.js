@@ -1,3 +1,4 @@
+// localStorage
 function localStorageGetItem(key) {
   const data = JSON.parse(localStorage.getItem(`${key}`)) ?? [];
   return data;
@@ -5,6 +6,7 @@ function localStorageGetItem(key) {
 function localStorageSetItem(key, data) {
   localStorage.setItem(`${key}`, JSON.stringify(data));
 }
+//Định dạng kiêu
 function fomatPrice(str)
 {
   let strPrint =  parseInt(str).toLocaleString("de-DE") + " VNĐ";
@@ -30,13 +32,10 @@ function handleRenderProduct()
      });
      element.innerHTML = content;
 }
+// Thực hiện click
 function handleClickView(id)
 {
   window.location = `../pages/detail_product.html?productId=${id}`
 }
-
-
-
 // =MAIN================================
-
 handleRenderProduct();

@@ -112,6 +112,9 @@ const products = [
 
 ];
 
+const admin = {user:admin, pass: admin}
+
+
 function localStorageGetItem(key)
  {
      const data = JSON.parse(localStorage.getItem(`${key}`));
@@ -123,5 +126,7 @@ localStorage.setItem(`${key}`, JSON.stringify(data));
    const listProduct = localStorageGetItem("products");
    if(!listProduct)
    {
-     localStorageSetItem("products",listProduct);
+
    }
+
+localStorageSetItem("products",listProduct);

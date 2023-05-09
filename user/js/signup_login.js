@@ -109,11 +109,17 @@ formSignup.addEventListener("submit", (element) => {
   const userRePassword = document.querySelector("#tbx_userRePassword");
  
   const listUser = localStorageGetItem("users");
-  let id = listUser.length+1;
+
+  let idAuto = 1;
+  //Lấy id order tự động
+  if ( listUser.length != 0) {
+    idAuto = listUser[listUser.length - 1].userId + 1;
+  }
+
   console.log(listUser);
 
   const newUser = {
-    userId: id,
+    userId: idAuto,
     userName: userName.value.trim(),
     userEmail: userEmail.value.toLowerCase().trim(),
     userPassword: userPassword.value.trim(),
