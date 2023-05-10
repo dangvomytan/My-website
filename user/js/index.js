@@ -66,7 +66,7 @@ function handleCartLength() {
 }
 
 function handleClickViewHome(id) {
-  window.location = `./user/pages/detail_product.html?productId=${id}`;
+  window.location = `./user/pages/detail_product.html?productid=${id}`;
 }
 
 function handleRenderProductHome() {
@@ -100,3 +100,4 @@ if (userLogin) {
 }
 handleCartLength();
 handleRenderUserLogin(userLogin);
+handleRenderProductHome()
